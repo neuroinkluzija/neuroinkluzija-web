@@ -1,0 +1,404 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #fffff3;
+  --foreground: #3a6655;
+  --card: #fffff3;
+  --card-foreground: #3a6655;
+  --popover: oklch(1 0 0);
+  --popover-foreground: #3a6655;
+  --primary: #3a6655;
+  --primary-foreground: #fffff3;
+  --secondary: #c3d5e9;
+  --secondary-foreground: #3a6655;
+  --muted: #dbe8f1;
+  --muted-foreground: #83a195;
+  --accent: #e2f0bb;
+  --accent-foreground: #3a6655;
+  --destructive: #d4183d;
+  --destructive-foreground: #fffff3;
+  --border: rgba(58, 102, 85, 0.2);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --ring: #83a195;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Custom neurodiversity palette - Svetle pastelne boje */
+  --adhd-color: #c2b6de;       /* ADHD - svetlo ljubičasta */
+  --autism-color: #c6dbf0;     /* Autizam - svetlo plava */
+  --sld-color: #fefec7;        /* SLD - svetlo žuta */
+  --dcd-color: #b4cfa5;        /* DCD - svetlo zelena */
+  --ts-color: #2f403a;         /* TS - tamno zelena za header/footer/kartica */
+  --ts-bg-color: #9cb490;      /* TS animirana pozadina - svetlo zelena pastelna */
+  --background-cream: #f8f3ed; /* Dopunska pozadinska boja */
+  --background-white: #fffff3; /* Bela pozadina */
+  --text-dark: #2f403a;        /* Tamni tekst za kontrast - tamno zelena */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Improved text rendering and balanced alignment */
+  * {
+    /* Disable hyphenation everywhere */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    
+    /* Improved text rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better text justification and spacing */
+  .text-justify,
+  [class*="text-justify"] {
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: 0;
+    letter-spacing: 0;
+    /* Prevent excessive word spacing */
+    text-align-last: left;
+    /* Better line breaking */
+    word-break: normal;
+    overflow-wrap: break-word;
+    /* Balanced text wrapping */
+    text-wrap: balance;
+  }
+  
+  /* Balanced text wrapping for headings and short paragraphs */
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    hyphens: none;
+  }
+  
+  /* Improved paragraph spacing and readability */
+  p {
+    text-wrap: pretty;
+    hyphens: none;
+    /* Optimal line length for readability */
+    max-width: 75ch;
+  }
+  
+  /* Special handling for justified text blocks */
+  .prose p,
+  .text-justify p,
+  [class*="text-justify"] p {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    text-wrap: pretty;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Gentle floating animation for character illustration */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Neurodiversity-friendly gentle background animation */
+@keyframes gentle-color-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Autism-specific blue-dominant animation with light green accents */
+@keyframes autism-blue-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ADHD-specific purple-dominant animation with gentle variations */
+@keyframes adhd-purple-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* DCD-specific green-dominant animation with natural variations */
+@keyframes dcd-green-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* SLD-specific yellow-dominant animation with warm variations */
+@keyframes sld-yellow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* TS-specific light green animation with more intense variations */
+@keyframes ts-green-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.neurodiversity-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--autism-color) 0%,
+    var(--dcd-color) 25%,
+    var(--sld-color) 50%,
+    var(--adhd-color) 75%,
+    var(--autism-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: gentle-color-flow 45s ease-in-out infinite;
+}
+
+.autism-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--autism-color) 0%,
+    #d4e7f5 33%,
+    var(--dcd-color) 66%,
+    var(--autism-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: autism-blue-flow 35s ease-in-out infinite;
+}
+
+.adhd-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--adhd-color) 0%,
+    #d0c4e8 25%,
+    var(--autism-color) 50%,
+    #ceb8e3 75%,
+    var(--adhd-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: adhd-purple-flow 40s ease-in-out infinite;
+}
+
+.dcd-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--dcd-color) 0%,
+    #c2d7b3 25%,
+    var(--autism-color) 50%,
+    #a6d297 75%,
+    var(--dcd-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: dcd-green-flow 38s ease-in-out infinite;
+}
+
+.sld-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--sld-color) 0%,
+    #fff5a0 25%,
+    var(--dcd-color) 50%,
+    #fffaab 75%,
+    var(--sld-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: sld-yellow-flow 40s ease-in-out infinite;
+}
+
+.ts-animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--ts-bg-color) 0%,
+    #adc19e 14%,
+    var(--dcd-color) 28%,
+    #8bb081 42%,
+    #a6d297 57%,
+    #c2d7b3 71%,
+    #adc19e 85%,
+    var(--ts-bg-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: ts-green-flow 25s ease-in-out infinite;
+}
+
+/* Reduced motion preference - respects user accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  .neurodiversity-animated-bg {
+    animation: none;
+    background: var(--autism-color);
+  }
+  
+  .autism-animated-bg {
+    animation: none;
+    background: var(--autism-color);
+  }
+
+  .adhd-animated-bg {
+    animation: none;
+    background: var(--adhd-color);
+  }
+
+  .dcd-animated-bg {
+    animation: none;
+    background: var(--dcd-color);
+  }
+
+  .sld-animated-bg {
+    animation: none;
+    background: var(--sld-color);
+  }
+
+  .ts-animated-bg {
+    animation: none;
+    background: var(--ts-bg-color);
+  }
+}
