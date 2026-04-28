@@ -324,6 +324,40 @@ export function HeroWithConditions({ language, onSectionChange }: HeroWithCondit
               {text.aboutUs}
             </button>
           </div>
+
+          {/* Kruzici na mobilnoj */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
+            {[...conditionsColumn2, ...conditionsColumn3].map(condition => (
+              <button
+                key={condition.id}
+                onClick={() => { onSectionChange(condition.id); window.scrollTo({ top: 0 }); }}
+                style={{
+                  width: '90px',
+                  height: '90px',
+                  borderRadius: '50%',
+                  backgroundColor: condition.color,
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  color: condition.id === 'ts' ? 'var(--background-white)' : 'var(--text-dark)',
+                  fontFamily: 'inherit'
+                }}
+              >
+                {condition.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Crtez na mobilnoj */}
+          <img
+            src={charactersImg}
+            alt=""
+            style={{ width: '220px', height: 'auto', animation: 'gentleFloat 6s ease-in-out infinite' }}
+          />
         </div>
       </div>
     </section>
