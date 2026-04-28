@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroWithConditions } from './components/HeroWithConditions';
 import { HomeWrapper } from './components/HomeWrapper';
@@ -19,8 +19,26 @@ import { DogadjajiSection } from './components/DogadjajiSection';
 import { PridruziSeSection } from './components/PridruziSeSection';
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('pocetna');
+  const getInitialSection = () => {
+    const hash = window.location.hash.replace('#', '');
+    return hash || 'pocetna';
+  };
+
+  const [activeSection, setActiveSection] = useState(getInitialSection);
   const [language, setLanguage] = useState<'bs' | 'en'>('bs');
+
+  useEffect(() => {
+    window.location.hash = activeSection === 'pocetna' ? '' : activeSection;
+  }, [activeSection]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) setActiveSection(hash);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const renderContent = () => {
     switch (activeSection) {
