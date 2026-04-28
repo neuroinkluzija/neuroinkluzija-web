@@ -119,7 +119,7 @@ export function ConditionsSection({ language, onSectionChange }: ConditionsSecti
               {text.sectionDescription}
             </p>
           </div>
-          <div className="flex-shrink-0 hidden md:block">
+          <div className="flex-shrink-0 flex justify-center md:block">
             <img
               src={illustrationImg}
               alt="Neurodiverzitet ilustracija"
