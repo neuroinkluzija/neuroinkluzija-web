@@ -534,7 +534,8 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
                 <div
                   style={{
                     flexShrink: 0,
-                    width: '120px',
+                    width: '110px',
+                    height: '110px',
                     borderRadius: '6px',
                     overflow: 'hidden',
                     backgroundColor: '#e8e3db',
@@ -543,7 +544,7 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
                   <img
                     src={article.image}
                     alt={article.title}
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                   />
                 </div>
 
