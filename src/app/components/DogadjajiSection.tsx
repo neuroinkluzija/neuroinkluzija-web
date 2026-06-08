@@ -464,22 +464,18 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
             alt={openArticle.title}
             style={{
               width: '100%',
-              height: '280px',
-              objectFit: 'cover',
+              height: 'auto',
+              display: 'block',
               borderRadius: '8px',
               marginBottom: '28px',
             }}
           />
 
-          <p
-            style={{
-              color: 'var(--text-dark)',
-              lineHeight: '1.75',
-              fontSize: '15px',
-            }}
-          >
-            {openArticle.fullContent}
-          </p>
+          <div style={{ color: 'var(--text-dark)', lineHeight: '1.75', fontSize: '15px' }}>
+            {openArticle.fullContent.split('\n\n').map((para, i) => (
+              <p key={i} style={{ marginBottom: '18px' }}>{para}</p>
+            ))}
+          </div>
         </div>
       </section>
     );
@@ -515,7 +511,6 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
                   style={{
                     flexShrink: 0,
                     width: '120px',
-                    height: '90px',
                     borderRadius: '6px',
                     overflow: 'hidden',
                     backgroundColor: '#e8e3db',
@@ -524,7 +519,7 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
                   <img
                     src={article.image}
                     alt={article.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
                 </div>
 
