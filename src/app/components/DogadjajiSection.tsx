@@ -458,19 +458,24 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
           >
             {openArticle.title}
           </h1>
+        </div>
 
+        {/* Full image, portrait preserved */}
+        <div className="container mx-auto max-w-3xl" style={{ marginBottom: '32px', display: 'flex', justifyContent: 'center' }}>
           <img
             src={openArticle.image}
             alt={openArticle.title}
             style={{
               width: '100%',
+              maxWidth: '480px',
               height: 'auto',
               display: 'block',
               borderRadius: '8px',
-              marginBottom: '28px',
             }}
           />
+        </div>
 
+        <div className="container mx-auto max-w-3xl">
           <div style={{ color: 'var(--text-dark)', lineHeight: '1.75', fontSize: '15px' }}>
             {openArticle.fullContent.split('\n\n').map((para, i) => (
               <p key={i} style={{ marginBottom: '18px' }}>{para}</p>
