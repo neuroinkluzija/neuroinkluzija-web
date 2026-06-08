@@ -29,6 +29,7 @@ interface Article {
   shortDesc: string;
   fullContent: string;
   image: string;
+  image2?: string;
 }
 
 const articles: Article[] = [
@@ -39,10 +40,11 @@ const articles: Article[] = [
     tagColor: 'var(--dcd-color)',
     title: 'Program Dana neurodiverziteta: dva dana razgovora, edukacije i kreativnog stvaranja',
     shortDesc:
-      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana — predavanja, panel diskusije i kreativne radionice.',
+      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana: predavanja, panel diskusije i kreativne radionice.',
     fullContent:
-      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana — 13. i 14. juna na Ljetnjoj pozornici u Gradskom parku.\n\n13. jun — predavanja i panel diskusije\n\nPrvog dana program počinje u 19:00h uvodnom riječju Emine Murtezić, predsjednice Udruženja Neuroinkluzija i direktorke programa. Voditelj večeri je Aleksandar Nićiforović.\n\nSlijede tri predavanja:\n\nSabina Hajrović, CEO Psihološkog centra „Haja", govoriće o tome kako različiti umovi grade zajednički svijet. Mejra Gusinac, defektolog-oligofrenolog, osvrnuće se na pitanje zašto neurodivergentna djeca često imaju problem sa školom, a ne sa učenjem. Milena Mutavdžić, predsjednica Udruženja Reakt, govorit će o tome kako psihološki filteri kreiraju nesporazume u komunikaciji.\n\nNakon kratke pauze u 20:10 slijede dvije panel diskusije. Prva okuplja roditelje — Mariju Stefanović, Esada Beširovića i Senidu Demić, na temu socijalnog pritiska i porodične stigme. Druga, u 20:40, bavi se ulogama sistema u prepoznavanju i uključivanju neurodivergentnih osoba, s učesnicima iz gradske uprave, dnevnog boravka, Udruženja psihologa Novog Pazara i Centra Terapija.\n\n14. jun — Creative Afternoon & Music Mingling\n\nDrugog dana program je posvećen kreativnom stvaranju, muzici i druženju. Radionice vode Bondžuk Pottery (radionica grnčarstva) i Atelje Articullum (radionica slikarstva). Prijave za radionice vrše se putem Instagram profila @bondzuk.pottery i @naidazdar_.\n\nUlaz je slobodan. Dobrodošli su svi.',
+      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana, 13. i 14. juna na Ljetnjoj pozornici u Gradskom parku.\n\n13. jun: predavanja i panel diskusije\n\nPrvog dana program počinje u 19:00h uvodnom riječju Emine Murtezić, predsjednice Udruženja Neuroinkluzija i direktorke programa. Voditelj večeri je Aleksandar Nićiforović.\n\nSlijede tri predavanja:\n\nSabina Hajrović, CEO Psihološkog centra „Haja", govoriće o tome kako različiti umovi grade zajednički svijet. Mejra Gusinac, defektolog-oligofrenolog, osvrnuće se na pitanje zašto neurodivergentna djeca često imaju problem sa školom, a ne sa učenjem. Milena Mutavdžić, predsjednica Udruženja Reakt, govorit će o tome kako psihološki filteri kreiraju nesporazume u komunikaciji.\n\nNakon kratke pauze u 20:10 slijede dvije panel diskusije. Prva okuplja roditelje, Mariju Stefanović, Esada Beširovića i Senidu Demić, na temu socijalnog pritiska i porodične stigme. Druga, u 20:40, bavi se ulogama sistema u prepoznavanju i uključivanju neurodivergentnih osoba, s učesnicima iz gradske uprave, dnevnog boravka, Udruženja psihologa Novog Pazara i Centra Terapija.\n\n14. jun: Creative Afternoon i Music Mingling\n\nDrugog dana program je posvećen kreativnom stvaranju, muzici i druženju. Radionice vode Bondžuk Pottery (radionica grnčarstva) i Atelje Articullum (radionica slikarstva). Prijave za radionice vrše se putem Instagram profila @bondzuk.pottery i @naidazdar_.\n\nUlaz je slobodan. Dobrodošli su svi.',
     image: program1Dan,
+    image2: program2Dan,
   },
   {
     id: 'dani-neurodiverziteta-2025',
@@ -78,10 +80,11 @@ const articlesEn: Article[] = [
     tagColor: 'var(--dcd-color)',
     title: 'Neurodiversity Days program: two days of conversation, education and creative work',
     shortDesc:
-      'Neurodiversity Days in Novi Pazar bring a rich program across two days — lectures, panel discussions and creative workshops.',
+      'Neurodiversity Days in Novi Pazar bring a rich program across two days: lectures, panel discussions and creative workshops.',
     fullContent:
-      'Neurodiversity Days in Novi Pazar bring a rich program across two days — June 13–14 at the Summer Stage in City Park.\n\nJune 13 — Lectures and panel discussions\n\nThe first day begins at 19:00 with opening remarks by Emina Murtezić, President of the Neuroinkluzija Association and program director. The evening host is Aleksandar Nićiforović.\n\nThree lectures follow:\n\nSabina Hajrović, CEO of Psychological Centre "Haja", will speak about how different minds build a common world. Mejra Gusinac, special education teacher, will address why neurodivergent children often struggle with school, but not with learning. Milena Mutavdžić, President of the Reakt Association, will speak about how psychological filters create misunderstandings in communication.\n\nAfter a short break, two panel discussions follow at 20:10. The first brings together parents — Marija Stefanović, Esad Bešarović and Senida Demić — on the topic of social pressure and family stigma. The second, at 20:40, examines the roles of institutions in recognizing and including neurodivergent individuals, with participants from city administration, a day centre, the Novi Pazar Psychologists\' Association and Centar Terapija.\n\nJune 14 — Creative Afternoon & Music Mingling\n\nThe second day is dedicated to creative work, music and socializing. Workshops are led by Bondžuk Pottery (pottery workshop) and Atelje Articullum (painting workshop). Workshop registrations are made via Instagram: @bondzuk.pottery and @naidazdar_.\n\nFree entry. Everyone is welcome.',
+      'Neurodiversity Days in Novi Pazar bring a rich program across two days, June 13–14 at the Summer Stage in City Park.\n\nJune 13: Lectures and panel discussions\n\nThe first day begins at 19:00 with opening remarks by Emina Murtezić, President of the Neuroinkluzija Association and program director. The evening host is Aleksandar Nićiforović.\n\nThree lectures follow:\n\nSabina Hajrović, CEO of Psychological Centre "Haja", will speak about how different minds build a common world. Mejra Gusinac, special education teacher, will address why neurodivergent children often struggle with school, but not with learning. Milena Mutavdžić, President of the Reakt Association, will speak about how psychological filters create misunderstandings in communication.\n\nAfter a short break, two panel discussions follow at 20:10. The first brings together parents, Marija Stefanović, Esad Bešarović and Senida Demić, on the topic of social pressure and family stigma. The second, at 20:40, examines the roles of institutions in recognizing and including neurodivergent individuals, with participants from city administration, a day centre, the Novi Pazar Psychologists\'  Association and Centar Terapija.\n\nJune 14: Creative Afternoon and Music Mingling\n\nThe second day is dedicated to creative work, music and socializing. Workshops are led by Bondžuk Pottery (pottery workshop) and Atelje Articullum (painting workshop). Workshop registrations are made via Instagram: @bondzuk.pottery and @naidazdar_.\n\nFree entry. Everyone is welcome.',
     image: program1Dan,
+    image2: program2Dan,
   },
   {
     id: 'dani-neurodiverziteta-2025',
@@ -481,6 +484,22 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
               <p key={i} style={{ marginBottom: '18px' }}>{para}</p>
             ))}
           </div>
+
+          {openArticle.image2 && (
+            <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'center' }}>
+              <img
+                src={openArticle.image2}
+                alt={openArticle.title}
+                style={{
+                  width: '100%',
+                  maxWidth: '480px',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: '8px',
+                }}
+              />
+            </div>
+          )}
         </div>
       </section>
     );
