@@ -539,6 +539,7 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
                     borderRadius: '6px',
                     overflow: 'hidden',
                     backgroundColor: '#e8e3db',
+                    alignSelf: 'flex-start',
                   }}
                 >
                   <img
