@@ -18,6 +18,8 @@ import finaleImg5 from '../../imports/25.jpeg';
 
 interface DogadjajiSectionProps {
   language: 'bs' | 'en';
+  initialArticleId?: string | null;
+  onArticleOpen?: (id: string | null) => void;
 }
 
 interface Article {
@@ -112,8 +114,22 @@ const articlesEn: Article[] = [
   },
 ];
 
-export function DogadjajiSection({ language }: DogadjajiSectionProps) {
-  const [openArticleId, setOpenArticleId] = useState<string | null>(null);
+export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: DogadjajiSectionProps) {
+  const [openArticleId, setOpenArticleId] = useState<string | null>(initialArticleId ?? null);
+  const [copied, setCopied] = useState(false);
+
+  const handleOpen = (id: string | null) => {
+    setOpenArticleId(id);
+    onArticleOpen?.(id);
+  };
+
+  const handleCopy = () => {
+    const url = `${window.location.origin}${window.location.pathname}#dogadjaji/${openArticleId}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   const data = language === 'bs' ? articles : articlesEn;
   const pageTitle = language === 'bs' ? 'Događaji' : 'Events';
@@ -153,9 +169,9 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
       return (
         <div style={{ backgroundColor: 'var(--background-cream)' }}>
           {/* Back button */}
-          <div className="container mx-auto max-w-6xl px-4 pt-8">
+          <div className="container mx-auto max-w-6xl px-4 pt-8 flex items-center justify-between">
             <button
-              onClick={() => setOpenArticleId(null)}
+              onClick={() => handleOpen(null)}
               className="flex items-center gap-2 cursor-pointer transition-opacity hover:opacity-70"
               style={{
                 background: 'none',
@@ -168,6 +184,23 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
             >
               <ArrowLeft className="h-4 w-4" />
               {backLabel}
+            </button>
+            <button
+              onClick={handleCopy}
+              style={{
+                background: 'none',
+                border: '1px solid rgba(47,64,58,0.25)',
+                borderRadius: '20px',
+                color: 'var(--text-dark)',
+                fontSize: '13px',
+                fontWeight: '500',
+                padding: '5px 14px',
+                cursor: 'pointer',
+                opacity: copied ? 1 : 0.7,
+                transition: 'opacity 0.2s',
+              }}
+            >
+              {copied ? (language === 'bs' ? '✓ Kopirano' : '✓ Copied') : (language === 'bs' ? 'Kopiraj link' : 'Copy link')}
             </button>
           </div>
 
@@ -417,21 +450,40 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
     return (
       <section className="py-16 px-4" style={{ backgroundColor: 'var(--background-cream)' }}>
         <div className="container mx-auto max-w-3xl">
-          <button
-            onClick={() => setOpenArticleId(null)}
-            className="flex items-center gap-2 mb-8 cursor-pointer transition-opacity hover:opacity-70"
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'var(--text-dark)',
-              fontSize: '14px',
-              fontWeight: '600',
-              padding: 0,
-            }}
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {backLabel}
-          </button>
+          <div className="flex items-center justify-between mb-8">
+            <button
+              onClick={() => handleOpen(null)}
+              className="flex items-center gap-2 cursor-pointer transition-opacity hover:opacity-70"
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-dark)',
+                fontSize: '14px',
+                fontWeight: '600',
+                padding: 0,
+              }}
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {backLabel}
+            </button>
+            <button
+              onClick={handleCopy}
+              style={{
+                background: 'none',
+                border: '1px solid rgba(47,64,58,0.25)',
+                borderRadius: '20px',
+                color: 'var(--text-dark)',
+                fontSize: '13px',
+                fontWeight: '500',
+                padding: '5px 14px',
+                cursor: 'pointer',
+                opacity: copied ? 1 : 0.7,
+                transition: 'opacity 0.2s',
+              }}
+            >
+              {copied ? (language === 'bs' ? '✓ Kopirano' : '✓ Copied') : (language === 'bs' ? 'Kopiraj link' : 'Copy link')}
+            </button>
+          </div>
 
           {/* Tag + date */}
           <div className="flex items-center gap-3 mb-4">
@@ -608,7 +660,7 @@ export function DogadjajiSection({ language }: DogadjajiSectionProps) {
 
                   {/* Read more */}
                   <button
-                    onClick={() => setOpenArticleId(article.id)}
+                    onClick={() => handleOpen(article.id)}
                     style={{
                       background: 'none',
                       border: 'none',

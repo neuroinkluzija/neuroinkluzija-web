@@ -21,20 +21,35 @@ import { PridruziSeSection } from './components/PridruziSeSection';
 export default function App() {
   const getInitialSection = () => {
     const hash = window.location.hash.replace('#', '');
+    if (hash.startsWith('dogadjaji/')) return 'dogadjaji';
     return hash || 'pocetna';
+  };
+
+  const getInitialArticleId = () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash.startsWith('dogadjaji/')) return hash.replace('dogadjaji/', '');
+    return null;
   };
 
   const [activeSection, setActiveSection] = useState(getInitialSection);
   const [language, setLanguage] = useState<'bs' | 'en'>('bs');
+  const [initialArticleId, setInitialArticleId] = useState<string | null>(getInitialArticleId);
 
   useEffect(() => {
     window.location.hash = activeSection === 'pocetna' ? '' : activeSection;
+    if (activeSection !== 'dogadjaji') setInitialArticleId(null);
   }, [activeSection]);
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (hash) setActiveSection(hash);
+      if (hash.startsWith('dogadjaji/')) {
+        setActiveSection('dogadjaji');
+        setInitialArticleId(hash.replace('dogadjaji/', ''));
+      } else if (hash) {
+        setActiveSection(hash);
+        setInitialArticleId(null);
+      }
     };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
@@ -83,7 +98,7 @@ export default function App() {
       case 'kontakt':
         return <ContactSection language={language} />;
       case 'dogadjaji':
-        return <DogadjajiSection language={language} />;
+        return <DogadjajiSection language={language} initialArticleId={initialArticleId} onArticleOpen={(id) => { window.location.hash = id ? `dogadjaji/${id}` : 'dogadjaji'; }} />;
       case 'pridruzi-se':
         return <PridruziSeSection language={language} onSectionChange={setActiveSection} />;
       case 'partneri-bih':
