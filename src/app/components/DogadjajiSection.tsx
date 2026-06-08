@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import heroImg from '../../imports/1.jpeg';
+import daniPoster from '../../imports/dani-neurodiverziteta-poster.png';
+import program1Dan from '../../imports/program-1-dan.png';
+import program2Dan from '../../imports/program-2-dan.png';
 import installImg2 from '../../imports/2-1.jpeg';
 import installImg3 from '../../imports/4-1.jpeg';
 import arrivalImg1 from '../../imports/5.jpeg';
@@ -30,6 +33,30 @@ interface Article {
 
 const articles: Article[] = [
   {
+    id: 'dani-neurodiverziteta-2025',
+    date: '13. i 14. jun 2025.',
+    tag: '',
+    tagColor: 'var(--dcd-color)',
+    title: 'Novi Pazar po prvi put slavi neurodiverzitet',
+    shortDesc:
+      'Novi Pazar će 13. i 14. juna na Ljetnjoj pozornici u Gradskom parku po prvi put proslaviti neurodiverzitet kroz razgovor, edukaciju i zajednicu.',
+    fullContent:
+      'Novi Pazar će 13. i 14. juna na Ljetnjoj pozornici u Gradskom parku po prvi put proslaviti neurodiverzitet kroz razgovor, edukaciju i zajednicu.\n\nDogađaj organizuje Udruženje Neuroinkluzija u okviru globalne kampanje Neurodiversity Foundation, koja se ove godine obilježava u više od 50 zemalja širom svijeta, a Srbija je ove godine dio te mreže po prvi put.\n\nDobrodošli su svi.',
+    image: daniPoster,
+  },
+  {
+    id: 'program-dani-2025',
+    date: '13. i 14. jun 2025.',
+    tag: '',
+    tagColor: 'var(--dcd-color)',
+    title: 'Program Dana neurodiverziteta: dva dana razgovora, edukacije i kreativnog stvaranja',
+    shortDesc:
+      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana — predavanja, panel diskusije i kreativne radionice.',
+    fullContent:
+      'Dani neurodiverziteta u Novom Pazaru donose bogat program raspoređen kroz dva dana — 13. i 14. juna na Ljetnjoj pozornici u Gradskom parku.\n\n13. jun — predavanja i panel diskusije\n\nPrvog dana program počinje u 19:00h uvodnom riječju Emine Murtezić, predsjednice Udruženja Neuroinkluzija i direktorke programa. Voditelj večeri je Aleksandar Nićiforović.\n\nSlijede tri predavanja:\n\nSabina Hajrović, CEO Psihološkog centra „Haja", govoriće o tome kako različiti umovi grade zajednički svijet. Mejra Gusinac, defektolog-oligofrenolog, osvrnuće se na pitanje zašto neurodivergentna djeca često imaju problem sa školom, a ne sa učenjem. Milena Mutavdžić, predsjednica Udruženja Reakt, govorit će o tome kako psihološki filteri kreiraju nesporazume u komunikaciji.\n\nNakon kratke pauze u 20:10 slijede dvije panel diskusije. Prva okuplja roditelje — Mariju Stefanović, Esada Beširovića i Senidu Demić, na temu socijalnog pritiska i porodične stigme. Druga, u 20:40, bavi se ulogama sistema u prepoznavanju i uključivanju neurodivergentnih osoba, s učesnicima iz gradske uprave, dnevnog boravka, Udruženja psihologa Novog Pazara i Centra Terapija.\n\n14. jun — Creative Afternoon & Music Mingling\n\nDrugog dana program je posvećen kreativnom stvaranju, muzici i druženju. Radionice vode Bondžuk Pottery (radionica grnčarstva) i Atelje Articullum (radionica slikarstva). Prijave za radionice vrše se putem Instagram profila @bondzuk.pottery i @naidazdar_.\n\nUlaz je slobodan. Dobrodošli su svi.',
+    image: program1Dan,
+  },
+  {
     id: 'kampanja-2024',
     date: '16. juni 2025.',
     tag: '',
@@ -44,6 +71,30 @@ const articles: Article[] = [
 ];
 
 const articlesEn: Article[] = [
+  {
+    id: 'dani-neurodiverziteta-2025',
+    date: 'June 13–14, 2025',
+    tag: '',
+    tagColor: 'var(--dcd-color)',
+    title: 'Novi Pazar celebrates neurodiversity for the first time',
+    shortDesc:
+      'On June 13–14, Novi Pazar will celebrate neurodiversity for the first time at the Summer Stage in City Park — through conversation, education and community.',
+    fullContent:
+      'Novi Pazar will celebrate neurodiversity for the first time on June 13–14 at the Summer Stage in City Park, through conversation, education and community.\n\nThe event is organized by the Neuroinkluzija Association as part of the global Neurodiversity Foundation campaign, celebrated this year in over 50 countries around the world — and Serbia is joining this network for the first time.\n\nEveryone is welcome.',
+    image: daniPoster,
+  },
+  {
+    id: 'program-dani-2025',
+    date: 'June 13–14, 2025',
+    tag: '',
+    tagColor: 'var(--dcd-color)',
+    title: 'Neurodiversity Days program: two days of conversation, education and creative work',
+    shortDesc:
+      'Neurodiversity Days in Novi Pazar bring a rich program across two days — lectures, panel discussions and creative workshops.',
+    fullContent:
+      'Neurodiversity Days in Novi Pazar bring a rich program across two days — June 13–14 at the Summer Stage in City Park.\n\nJune 13 — Lectures and panel discussions\n\nThe first day begins at 19:00 with opening remarks by Emina Murtezić, President of the Neuroinkluzija Association and program director. The evening host is Aleksandar Nićiforović.\n\nThree lectures follow:\n\nSabina Hajrović, CEO of Psychological Centre "Haja", will speak about how different minds build a common world. Mejra Gusinac, special education teacher, will address why neurodivergent children often struggle with school, but not with learning. Milena Mutavdžić, President of the Reakt Association, will speak about how psychological filters create misunderstandings in communication.\n\nAfter a short break, two panel discussions follow at 20:10. The first brings together parents — Marija Stefanović, Esad Bešarović and Senida Demić — on the topic of social pressure and family stigma. The second, at 20:40, examines the roles of institutions in recognizing and including neurodivergent individuals, with participants from city administration, a day centre, the Novi Pazar Psychologists\' Association and Centar Terapija.\n\nJune 14 — Creative Afternoon & Music Mingling\n\nThe second day is dedicated to creative work, music and socializing. Workshops are led by Bondžuk Pottery (pottery workshop) and Atelje Articullum (painting workshop). Workshop registrations are made via Instagram: @bondzuk.pottery and @naidazdar_.\n\nFree entry. Everyone is welcome.',
+    image: program1Dan,
+  },
   {
     id: 'kampanja-2024',
     date: 'June 16, 2025',
