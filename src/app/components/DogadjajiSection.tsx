@@ -317,17 +317,17 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
           {/* Section 3: Installation (images left, text right) */}
           <section className="py-12 px-4" style={{ backgroundColor: 'var(--background-white)' }}>
             <div className="container mx-auto max-w-6xl">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'start' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   <img
                     src={installImg2}
                     alt="Installation 1"
-                    style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}
                   />
                   <img
                     src={installImg3}
                     alt="Installation 2"
-                    style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}
                   />
                 </div>
                 <div>
@@ -347,22 +347,10 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
               <p style={{ color: 'var(--text-dark)', fontSize: '15px', lineHeight: '1.75', marginBottom: '32px', textAlign: 'center', maxWidth: '760px', margin: '0 auto 32px' }}>
                 {content.arrivalText}
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-                <img
-                  src={arrivalImg1}
-                  alt="Arrival 1"
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', borderRadius: '8px' }}
-                />
-                <img
-                  src={arrivalImg2}
-                  alt="Arrival 2"
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', borderRadius: '8px' }}
-                />
-                <img
-                  src={arrivalImg3}
-                  alt="Arrival 3"
-                  style={{ width: '100%', height: '240px', objectFit: 'cover', borderRadius: '8px' }}
-                />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <img src={arrivalImg1} alt="Arrival 1" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
+                <img src={arrivalImg2} alt="Arrival 2" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
+                <img src={arrivalImg3} alt="Arrival 3" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
               </div>
             </div>
           </section>
@@ -373,7 +361,7 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
               <img
                 src={panelIntroImg}
                 alt="Panel audience"
-                style={{ width: '100%', height: '500px', objectFit: 'cover', borderRadius: '8px' }}
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}
               />
             </div>
           </section>
@@ -381,7 +369,7 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
           {/* Section 6: Panel (text left, images right) */}
           <section className="py-12 px-4" style={{ backgroundColor: 'var(--background-cream)' }}>
             <div className="container mx-auto max-w-6xl">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'start' }}>
                 <div>
                   {content.panelText.split('\n\n').map((paragraph, idx) => (
                     <p key={idx} style={{ color: 'var(--text-dark)', fontSize: '15px', lineHeight: '1.75', marginBottom: idx < content.panelText.split('\n\n').length - 1 ? '16px' : '0', whiteSpace: 'pre-line' }}>
@@ -389,22 +377,10 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
                     </p>
                   ))}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <img
-                    src={panelImg1}
-                    alt="Panel discussion 1"
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                  />
-                  <img
-                    src={panelImg2}
-                    alt="Panel discussion 2"
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                  />
-                  <img
-                    src={panelImg3}
-                    alt="Panel discussion 3"
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', gridColumn: 'span 2' }}
-                  />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <img src={panelImg1} alt="Panel discussion 1" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
+                  <img src={panelImg2} alt="Panel discussion 2" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
+                  <img src={panelImg3} alt="Panel discussion 3" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
                 </div>
               </div>
             </div>
@@ -416,17 +392,9 @@ export function DogadjajiSection({ language, initialArticleId, onArticleOpen }: 
               <p style={{ color: 'var(--text-dark)', fontSize: '15px', lineHeight: '1.75', marginBottom: '32px', textAlign: 'center', maxWidth: '760px', margin: '0 auto 32px' }}>
                 {content.finaleText}
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <img
-                  src={finaleImg4}
-                  alt="Finale night projection"
-                  style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
-                />
-                <img
-                  src={finaleImg5}
-                  alt="Finale night atmosphere"
-                  style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
-                />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <img src={finaleImg4} alt="Finale night projection" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
+                <img src={finaleImg5} alt="Finale night atmosphere" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }} />
               </div>
             </div>
           </section>
